@@ -47,12 +47,27 @@ class App extends Component {
   }
 
   render() {
+
+      const options = {
+        title: {
+          text: "Basic Column Chart"
+        },
+        data: [
+        {
+          // Change type to "doughnut", "line", "splineArea", etc.
+          type: "column",
+          dataPoints: [
+            { label: "Apple",  y: 10  },
+            { label: "Orange", y: 15  },
+            { label: "Banana", y: 25  },
+            { label: "Mango",  y: 30  },
+            { label: "Grape",  y: 28  }
+          ]
+        }
+        ]
+      }
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
         <Chart chartData={this.state.chartData} location="Massachusetts" legendPosition="bottom"/>
       </div>
     );
